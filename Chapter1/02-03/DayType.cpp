@@ -40,7 +40,6 @@ DayType::~DayType() {}
 void DayType::printDay()
 {
     cout << "The day is: " << dayName << endl;
-    cout << "It's weekday number " << currentDay << endl;
 }
 
 string DayType::getDay()
@@ -50,16 +49,27 @@ string DayType::getDay()
 
 string DayType::getNextDay()
 {
-
-
+    if(currentDay == 7)
+    {
+        return days[0];
+    }
+    else {
+        return days[currentDay];
+    }
 }
 
 string DayType::getPreviousDay()
 {
-
+    if(currentDay == 1)
+    {
+        return days[6];
+    }
+    else {
+        return days[currentDay - 2];
+    }
 }
 
-string addDays(int numDaysToAdd)
+string DayType::addDays(int numDaysToAdd) const
 {
-
+    // TODO
 }

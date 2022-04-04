@@ -45,7 +45,7 @@ public:
     // has been set to non-empty string
     // Poscondition: returns the previous day
 
-    string addDays(int numDaysToAdd);
+    string addDays(int numDaysToAdd) const;
     // Precondition: DayType has been created and the day member
     // has been set to non-empty string
     // Poscondition: returns the name of the day that is numDaysToAdd
