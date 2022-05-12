@@ -13,14 +13,14 @@ public:
     // Default constructor.
     // Initialises dayName to empty string and currentDay to 0.
 
-    DayType(string day);
+    explicit DayType(string day);
     // Overloaded constructor.
     // Initialises dayName to day and currentDay to its corresponding array key.
 
     ~DayType();
     // Destructor
 
-    void setDay(string day);
+    void setDay(string &day);
     // Precondition: DayType has been created.
     // Postcondition: Sets the day to day
 
