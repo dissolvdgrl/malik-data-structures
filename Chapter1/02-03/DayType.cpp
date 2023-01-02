@@ -7,7 +7,7 @@
 #include <string>
 using namespace std;
 
-DayType::DayType(): dayName("Monday"), currentDay(0)
+DayType::DayType(): dayName{"Monday"}, currentDay{0}
 {}
 
 DayType::DayType(string day)
@@ -26,7 +26,7 @@ void DayType::setDay(string &day)
 {
     dayName = day;
 
-    for(int i = 0; i < sizeof(days); i++)
+    for(int i = 0; i < 7; i++)
     {
         if(days[i] == dayName)
         {
@@ -39,7 +39,7 @@ DayType::~DayType() {}
 
 void DayType::printDay()
 {
-    cout << "The day is: " << dayName << endl;
+    cout << "The current day is: " << dayName << endl;
 }
 
 string DayType::getDay()
@@ -71,5 +71,12 @@ string DayType::getPreviousDay()
 
 string DayType::addDays(int numDaysToAdd) const
 {
+    int newDay = 0;
 
+    if (numDaysToAdd < 7)
+        newDay = currentDay - (7 % numDaysToAdd) - 1;
+    else
+        newDay = currentDay + (numDaysToAdd % 7) - 1;
+
+    return days[newDay];
 }
