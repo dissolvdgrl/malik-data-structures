@@ -4,12 +4,12 @@
 
 #include "CashRegister.h"
 
-CashRegister CashRegister::cashRegister()
+CashRegister::CashRegister()
 {
     cashOnHand = 500;
 }
 
-CashRegister CashRegister::cashRegister(int cashIn)
+CashRegister::CashRegister(int cashIn)
 {
     if (cashIn >= 0)
         cashOnHand = cashIn;

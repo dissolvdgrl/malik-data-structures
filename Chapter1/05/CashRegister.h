@@ -8,8 +8,8 @@
 
 class CashRegister {
 public:
-    CashRegister cashRegister();
-    CashRegister cashRegister(int cashIn);
+    CashRegister();
+    CashRegister(int cashIn);
 
     int getCurrentBalance() const;
     void acceptAmount(int amountIn);

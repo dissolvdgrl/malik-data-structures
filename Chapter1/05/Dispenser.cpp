@@ -4,12 +4,12 @@
 
 #include "Dispenser.h"
 
-Dispenser Dispenser::dispenser()
+Dispenser::Dispenser()
 {
     numberOfItems = 50;
     cost = 50;
 }
-Dispenser Dispenser::dispenser(int setNoOfItems, int setCost)
+Dispenser::Dispenser(int setNoOfItems, int setCost)
 {
     if (setNoOfItems >= 0)
         numberOfItems = setNoOfItems;

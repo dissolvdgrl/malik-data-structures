@@ -8,8 +8,8 @@
 
 class Dispenser {
 public:
-    Dispenser dispenser();
-    Dispenser dispenser(int setNoOfItems, int setCost);
+    Dispenser();
+    Dispenser(int setNoOfItems, int setCost);
     int getNoOfItems() const;
     int getCost() const;
     void makeSale();
