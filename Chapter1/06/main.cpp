@@ -1,6 +1,9 @@
 #include <iostream>
+#include "LineType.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    LineType lineOne(1,1,1);
+    int slope = lineOne.getSlope();
+    std::cout << "Slope: " << slope << std::endl;
     return 0;
 }

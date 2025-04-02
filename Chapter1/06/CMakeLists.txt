@@ -3,4 +3,4 @@ project(06)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(06 main.cpp)
+add_executable(06 main.cpp LineType.cpp LineType.h)
