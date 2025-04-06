@@ -3,19 +3,24 @@
 
 class TicTacToe {
 public:
-    int getBoard();
+    TicTacToe();
+    
+    void printBoard();
     int playMove(int block, char letter);
     bool isMoveValid(int move, char letter);
-    bool getWinner();
+    char getWinner();  
+    char getCurrentPlayer(); // returns the player whose current turn it is.
+    void switchCurrentPlayer(); // switches the current player to the other one when the turn is over.
     
 
 private:
-    int board[3][3] = {
-        { 0, 1, 2 },
-        { 3, 4, 5 }
+    char board[3][3] = {
+        { ' ', ' ', ' ' },
+        { ' ', ' ', ' ' },
+        { ' ', ' ', ' ' }
     };
-    char playerA, playerB, winner, letter, block;
-    int move;
+    char playerA = 'A', playerB = 'B', winner, currentPlayer;
+    void resetGame();
 
 };
 
