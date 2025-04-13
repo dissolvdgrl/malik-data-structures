@@ -8,17 +8,13 @@ TicTacToe::TicTacToe()
     
 }
 
-void TicTacToe::printBoard()
-{
-    cout << "HI" << endl;
-    /*
+void TicTacToe::printBoard() const {
     for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < i; j++) {
-            cout << board[i][j];
+        for (int j = 0; j < 3; j++) {
+            cout << '|' << board[i][j];
         }
-        cout << endl;
+        cout << '|' << endl;
     }
-    */
 }
 
 int TicTacToe::playMove(int block, char letter)
@@ -44,6 +40,23 @@ char TicTacToe::getCurrentPlayer()
 void TicTacToe::switchCurrentPlayer()
 {
     currentPlayer = 'B';
+}
+
+char TicTacToe::resetGame(char userInput) {
+    // This is a bit weird, need to refactor
+    cout << "Are you ready to start?" << endl;
+    currentPlayer = 'A';
+    resetBoard();
+
+    return userInput;
+}
+
+void TicTacToe::resetBoard() {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            board[i][j] = '-';
+        }
+    }
 }
 
 

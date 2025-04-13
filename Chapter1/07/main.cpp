@@ -5,14 +5,19 @@ using namespace std;
 
 int main() {
 
-    // This is for tic tac toe
+    // Human = player A
+    // Computer = Player B
 
-    // 1. Prompt for game start        
-    // 2. set random player as player to start
+    char userInput;
 
+    cout << "Welcome to TIC TAC TOE!" << endl;
+    cout << endl;
 
-    cout << "PLAY TIC TAC TOE" << endl;
+    TicTacToe game;
 
+    cin >> userInput;
+
+    game.resetGame(userInput);
 
     return 0;
 }
