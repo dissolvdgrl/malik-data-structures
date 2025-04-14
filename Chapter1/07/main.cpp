@@ -15,9 +15,16 @@ int main() {
 
     TicTacToe game;
 
+    cout << "Are you ready to start?" << endl;
+
     cin >> userInput;
 
-    game.resetGame(userInput);
+    char continueGame = game.resetGame(userInput);
 
-    return 0;
+    if (continueGame == 'n') {
+        return 0;
+    } else {
+        // reinitialise the game
+    }
+
 }

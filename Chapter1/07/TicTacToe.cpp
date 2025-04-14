@@ -43,9 +43,16 @@ void TicTacToe::switchCurrentPlayer()
 }
 
 char TicTacToe::resetGame(char userInput) {
-    // This is a bit weird, need to refactor
-    cout << "Are you ready to start?" << endl;
-    currentPlayer = 'A';
+
+    userInput = tolower(userInput);
+
+    // This method is a bit weird, need to refactor
+    char players[2] = { 'A', 'B' };
+    int randomNumber = rand() % 2;
+    char startingPlayer = players[randomNumber];
+
+    currentPlayer = startingPlayer;
+
     resetBoard();
 
     return userInput;
