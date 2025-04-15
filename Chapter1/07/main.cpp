@@ -9,22 +9,25 @@ int main() {
     // Computer = Player B
 
     char userInput;
-
-    cout << "Welcome to TIC TAC TOE!" << endl;
-    cout << endl;
-
     TicTacToe game;
 
-    cout << "Are you ready to start?" << endl;
+    cout << "Welcome to TIC TAC TOE!" << endl;
+    cout << "To start, type y when prompted and hit Enter." << endl;
+    cout << "Are you ready to start? " << endl;
 
     cin >> userInput;
 
-    char continueGame = game.resetGame(userInput);
+    // Start game loop
+    do {
+        game.resetGame(userInput);
 
-    if (continueGame == 'n') {
-        return 0;
-    } else {
-        // reinitialise the game
-    }
+        // Do some game logic here
+
+        cout << "Do you want to play again? ";
+        cin >> userInput;
+    } while (userInput == 'y' || userInput == 'Y');
+
+    cout << "Goodbye :)" << endl;
+    return 0;
 
 }
