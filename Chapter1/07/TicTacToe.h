@@ -6,6 +6,7 @@ public:
     TicTacToe();
     
     void printBoard() const;
+    void updateBoardState(int move, char letter);
     int playMove(int block, char letter);
     bool isMoveValid(int move, char letter);
     char getWinner();  

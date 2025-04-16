@@ -17,6 +17,10 @@ void TicTacToe::printBoard() const {
     }
 }
 
+void TicTacToe::updateBoardState(int move, char letter) {
+    // board[move -1] = letter;
+}
+
 int TicTacToe::playMove(int block, char letter)
 {
     return 0;
@@ -27,14 +31,15 @@ bool TicTacToe::isMoveValid(int move, char letter)
     return true;
 }
 
+// I don't know if this is even necessary
 char TicTacToe::getWinner()
 {
-    return 'A';
+    return winner;
 }
 
 char TicTacToe::getCurrentPlayer()
 {
-    return 'A';
+    return currentPlayer;
 }
 
 void TicTacToe::switchCurrentPlayer()
