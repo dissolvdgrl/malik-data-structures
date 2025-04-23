@@ -42,7 +42,7 @@ int main() {
         cout << "Ok, pick your block: ";
         cin >> move;
 
-        cout << "Now pick X or O";
+        cout << "Now pick X or O: ";
         cin >> letter;
 
         bool isMoveValid = game.isMoveValid(move, letter);

@@ -28,6 +28,10 @@ int TicTacToe::playMove(int block, char letter)
 
 bool TicTacToe::isMoveValid(int move, char letter)
 {
+    // loop through board
+    // find cell = move
+    // if cellContents == letter, return false
+    // else true and updateBoardState(move, letter)
     return true;
 }
 
