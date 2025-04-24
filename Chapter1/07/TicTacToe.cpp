@@ -28,11 +28,23 @@ int TicTacToe::playMove(int block, char letter)
 
 bool TicTacToe::isMoveValid(int move, char letter)
 {
-    // loop through board
-    // find cell = move
-    // if cellContents == letter, return false
-    // else true and updateBoardState(move, letter)
-    return true;
+    bool conclusion = false;
+    // move - 1, because array indexing starts at 0 and we prompt the user to enter 1-9.
+    // Usually it's only techies that are aware of zero indexing for arrays.
+    // Sorry, this loop is unsightly, I need to find a better way.
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (j == move - 1) {
+                if (board[i][j] == letter) {
+                    conclusion = false;
+                }
+                updateBoardState(move, letter);
+                conclusion = true;
+            };
+        }
+    }
+
+    return conclusion;
 }
 
 // I don't know if this is even necessary

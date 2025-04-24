@@ -49,6 +49,7 @@ int main() {
 
         if (isMoveValid) {
             game.playMove(move, letter);
+            game.printBoard();
             // Update board
         } else {
             cout << "You can't play in this block, please try again.";
