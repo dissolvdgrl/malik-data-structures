@@ -17,8 +17,22 @@ void TicTacToe::printBoard() const {
     }
 }
 
+// Only run this when a move is indeed valid
 void TicTacToe::updateBoardState(int move, char letter) {
-    // board[move -1] = letter;
+    switch (move) {
+        case 1 ... 3: // Row 1
+            board[0][move - 1] = letter;
+            break;
+        case 4 ... 6: // Row 2
+            board[1][move - 1] = letter;
+            break;
+        case 7 ... 9: // Row 3
+            board[2][move - 1] = letter;
+        break;
+    default:
+        // fuck off, clang;
+        break;
+    }
 }
 
 int TicTacToe::playMove(int block, char letter)
@@ -26,7 +40,7 @@ int TicTacToe::playMove(int block, char letter)
     return 0;
 }
 
-bool TicTacToe::isMoveValid(int move, char letter)
+bool TicTacToe::isMoveValid(const int move, const char letter)
 {
     bool conclusion = false;
     // move - 1, because array indexing starts at 0 and we prompt the user to enter 1-9.
