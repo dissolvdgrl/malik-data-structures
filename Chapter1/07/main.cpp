@@ -16,6 +16,8 @@ int main() {
 
 
     char userInput;
+    int move;
+    char letter;
     TicTacToe game;
 
     cout << "Welcome to TIC TAC TOE!" << endl;
@@ -26,35 +28,30 @@ int main() {
 
     // Start game loop
     do {
-        int move;
-        char letter;
-
         game.resetGame(userInput);
+
         cout << "You are Player A." << endl;
         cout << "Player B is the computer." << endl;
 
         cout << "Starting player is: " << game.getCurrentPlayer() << endl;
+
         game.printBoard();
 
         cout << "Specify a move by first choosing the block (1-9) and then you'll be prompted for an X or an O." << endl;
 
-        // The next couple of stuff should be put into a method, so that it can be called again if the move is invalid.
-        cout << "Ok, pick your block: ";
-        cin >> move;
+        game.runPlayerTurn(game.getCurrentPlayer(), letter, move);
 
-        cout << "Now pick X or O: ";
-        cin >> letter;
-
-        bool isMoveValid = game.isMoveValid(move, letter);
-
-        if (isMoveValid) {
-            game.playMove(move, letter);
+        if (bool isMoveValid = game.isMoveValid(move, letter)) {
             game.updateBoardState(move, letter);
             game.printBoard();
+            game.runPlayerTurn(game.getCurrentPlayer(), letter, move);
         } else {
             cout << "You can't play in this block, please try again.";
-            // Run the input again
+            game.runPlayerTurn(game.getCurrentPlayer(), letter, move);
         }
+
+
+
 
         cout << "Do you want to play again? ";
         cin >> userInput;

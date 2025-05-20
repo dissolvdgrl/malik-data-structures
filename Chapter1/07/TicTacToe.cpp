@@ -35,7 +35,7 @@ void TicTacToe::updateBoardState(int move, char letter) {
     }
 }
 
-int TicTacToe::playMove(int block, char letter)
+int TicTacToe::playMove(int move, char letter)
 {
     return 0;
 }
@@ -77,7 +77,8 @@ void TicTacToe::switchCurrentPlayer()
     currentPlayer = 'B';
 }
 
-char TicTacToe::resetGame(char userInput) {
+char TicTacToe::resetGame(char userInput)
+{
 
     userInput = tolower(userInput);
 
@@ -93,12 +94,38 @@ char TicTacToe::resetGame(char userInput) {
     return userInput;
 }
 
-void TicTacToe::resetBoard() {
+void TicTacToe::resetBoard()
+{
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             board[i][j] = '-';
         }
     }
+}
+
+void TicTacToe::runPlayerTurn(char player, int move, char letter)
+{
+    currentPlayer = player;
+
+    // Human
+    if (currentPlayer == 'A') {
+        cout << "Ok, pick your block: ";
+        cin >> move;
+
+        cout << "Now pick X or O: ";
+        cin >> letter;
+    }
+
+    bool validMove = isMoveValid(move, letter);
+
+    if (validMove) {
+        // Check who wins - how, i do not know yet. need a mechanism to keep track of which player picks which letter
+        // if not a win, update board state
+        // switch players
+        // else set some winning condition variable
+    }
+
+
 }
 
 
